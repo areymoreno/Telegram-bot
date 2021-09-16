@@ -9,9 +9,9 @@ PORT = int(os.environ.get('PORT', '8443'))
 
 # DEBUG o PRODUCCION
 if DEBUG:
-    TOKEN = "1949186993:AAHBf-Nn2az1T1GpiMrwdXztG6QDsZkk_eI"
+    TOKEN = "1943575292:AAEvlakkWvn4q_TpY6C0XXvZcoCLX38gOBA"
 else:
-    TOKEN = "1949186993:AAHBf-Nn2az1T1GpiMrwdXztG6QDsZkk_eI"
+    TOKEN = "1943575292:AAEvlakkWvn4q_TpY6C0XXvZcoCLX38gOBA"
 
 
 # Login del bot
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 # Inicio de bot
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('El Portal Bostezante está abierto, ¿qué desea tomar?')
+    update.message.reply_text('Ready!')
 
 # Ayuda del bot
 def help(update, context):
