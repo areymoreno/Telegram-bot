@@ -9,9 +9,9 @@ PORT = int(os.environ.get('PORT', '8443'))
 
 # DEBUG o PRODUCCION
 if DEBUG:
-    TOKEN = "1943575292:AAEvlakkWvn4q_TpY6C0XXvZcoCLX38gOBA"
+    TOKEN = "TOKEN_BOT_DEBUG"
 else:
-    TOKEN = "1943575292:AAEvlakkWvn4q_TpY6C0XXvZcoCLX38gOBA"
+    TOKEN = "TOKEN_NOT_PRODUCTION"
 
 
 # Login del bot
@@ -62,13 +62,10 @@ def main():
     if DEBUG:
         updater.start_polling()
     else:  
-        updater.start_webhook(listen="0.0.0.0",
-                        port=PORT,
-                        url_path=TOKEN) 
-        updater.bot.set_webhook("https://durnan-bot.herokuapp.com/" + TOKEN)
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN) 
+        updater.bot.set_webhook("HEROKU_URL" + TOKEN)
 
     updater.idle()
-
 
 if __name__ == '__main__':
     main()
